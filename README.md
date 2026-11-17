@@ -9,7 +9,7 @@
 
 | 미션 번호 | 미션명 | 주요 기술 스택 | 상태 | 상세 문서 |
 |:---:|:---|:---|:---:|:---:|
-| **Mission 1-2** | 파이썬 객관식 퀴즈 게임 (CLI) | Python (OOP, JSON Persistence) | **완료 (Done)** | [상세 보기](./Mission1-2/README.md) |
+| **Mission 1-2** | 파이썬 객관식 퀴즈 게임 (CLI) | Python (OOP, JSON Persistence, random, datetime) | **완료 (Done)** | [상세 보기](./Mission1-2/README.md) |
 | *Mission 2-* | *(차후 진행 예정)* | - | 준비 중 | - |
 
 ---
@@ -20,14 +20,18 @@
 - **개요**: 파이썬 기초 문법을 학습하고 점검할 수 있는 대화형 4지선다 객관식 퀴즈 프로그램
 - **핵심 기능**:
   - `Quiz` 및 `QuizGame` 클래스를 이용한 객체지향 설계
-  - 파이썬 기본 퀴즈 출제 (순차 풀기 / 무작위 랜덤 풀기)
-  - 퀴즈 추가/삭제 및 실시간 목록 조회
-  - `state.json` (UTF-8)을 통한 퀴즈 데이터 및 역대 최고 점수(`high_score`) 영속화
+  - `random.shuffle()` 기반 무작위 퀴즈 출제 (랜덤 출제)
+  - 풀이할 문제 수(1 ~ 전체) 선택 기능
+  - `Quiz` 힌트(`hint`) 속성 지원 및 풀이 중 힌트 확인 시 5점 감점 시스템
+  - 퀴즈 추가 및 삭제(즉시 파일 반영)
+  - `datetime` 모듈 기반 날짜/시간, 문제 수, 점수 등 **게임 플레이 기록 히스토리 영속화**
+  - `state.json` (UTF-8)을 통한 퀴즈 데이터, 최고 점수, 히스토리 영속 저장
+  - 파이썬 초보자도 쉽게 학습할 수 있는 상세한 한글 주석
 - **실행 방법**:
   ```bash
   cd Mission1-2 && python main.py
   ```
-- **상세 문서**: [Mission 1-2 README.md](./Mission1-2/README.md) (기능 상세, state.json 구조, 선정 이유, 브랜치 히스토리 포함)
+- **상세 문서**: [Mission 1-2 README.md](./Mission1-2/README.md) (기능 상세, random 모듈 학습, 힌트 감점 로직, state.json 구조, 브랜치 히스토리 포함)
 
 ---
 
@@ -41,7 +45,7 @@ Basecamp/ (통합 작업실 루트)
     ├── .gitignore     # Git 무시 설정
     ├── README.md      # 미션 1-2 상세 설명서
     ├── main.py        # 퀴즈 게임 메인 프로그램
-    └── state.json     # 퀴즈 데이터 및 최고 점수 파일
+    └── state.json     # 퀴즈 데이터, 최고 점수 및 게임 히스토리 파일
 ```
 
 ---
@@ -53,7 +57,8 @@ Basecamp 저장소의 브랜치는 전체 미션의 통합 및 이력 보존을 
 | 브랜치명 | 구분 | 설명 |
 |:---|:---:|:---|
 | `main` | 기본 브랜치 (Main) | 모든 완료된 미션 결과물이 통합되는 기본 안정 브랜치입니다. |
-| `feature-persistence` | 기능 브랜치 (Feature) | 미션 1-2의 데이터 영속화 및 문서화 작업을 위해 분기되어 작업 후 `main`에 병합되었습니다. |
+| `feature-persistence` | 기능 브랜치 (Feature) | 미션 1-2의 데이터 영속화 및 기본 문서화 작업을 위해 분기되어 작업 후 `main`에 병합되었습니다. |
+| `feature-quiz-enhancements` | 기능 브랜치 (Feature) | 랜덤 출제, 문제 수 선택, 힌트 감점 로직, 퀴즈 삭제, 점수 히스토리 기록 기능을 구현 후 `main`에 병합되었습니다. |
 
 ---
 
