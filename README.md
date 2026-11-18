@@ -9,7 +9,7 @@
 
 | 주차 / 번호 | 미션명 | 주요 기술 스택 | 상태 | 미션 저장소 |
 |:---:|:---|:---|:---:|:---:|
-| **Mission 1-2** | 파이썬 객관식 퀴즈 게임 (CLI) | Python (OOP, JSON Persistence) | **진행 예정** | [바로가기](https://github.com/Pikachu141695/Mission1-2) |
+| **Mission 1-2** | 파이썬 객관식 퀴즈 게임 (CLI) | Python (OOP, JSON Persistence) | **완료** | [바로가기](https://github.com/Pikachu141695/Mission1-2) |
 | **Mission 1-3** | *(차후 미션)* | - | 준비 중 | - |
 
 ---
